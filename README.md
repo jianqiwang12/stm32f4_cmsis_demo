@@ -83,7 +83,14 @@
   [env:black_f407zg]
   platform = ststm32
   board = black_f407zg
+  
+  ; change microcontroller
+  board_build.mcu = stm32f407zgt6
+  ; change MCU frequency
+  board_build.f_cpu = 168000000L
+  
   framework = cmsis
+  
   upload_protocol = stlink
   debug_tool = stlink
   
@@ -103,8 +110,10 @@
 
 - 编译通过后再点击左下角的`->`下载至开发板上。
 
-- 下载成功后，即可看到开发板上的led开始闪烁。
+- 下载成功后，即可看到开发板上2个led交替闪烁。
 
 ### 正点原子探索者STM32F407开发板例程(库函数版本)移植情况
 
-- 实验1： 跑马灯实验
+- :warning:**延时函数时间不准确，待解决!**
+
+- :white_check_mark:实验1： 跑马灯实验
